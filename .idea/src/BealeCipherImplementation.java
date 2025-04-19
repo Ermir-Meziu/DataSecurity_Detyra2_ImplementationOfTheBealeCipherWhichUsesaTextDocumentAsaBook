@@ -14,7 +14,19 @@ public class BealeCipherImplementation {
             System.out.println(e.getMessage());
         }
     }
-}
+
 public static ArrayList<String> loadBook(String fileName) {
     ArrayList<String> words = new ArrayList<>();
+    try {
+        File file = new File(fileName);
+        Scanner sc = new Scanner(file);
+        while (sc.hasNextLine()) {
+            String word = sc.next().toLowerCase();
+            words.add(word);
+        }
+        sc.close();
+    }catch (FileNotFoundException e) {
+        e.printStackTrace();
+    }
+    return words;
 }
