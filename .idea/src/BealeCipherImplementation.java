@@ -15,3 +15,6 @@ public class BealeCipherImplementation {
         }
     }
 }
+public static ArrayList<String> loadBook(String fileName) {
+    ArrayList<String> words = new ArrayList<>();
+}
