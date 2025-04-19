@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class BealeCipherImplementation {
     public static void generateBookFile(String fileName) {
-        try{
+        try {
             FileWriter fw = new FileWriter(fileName);
             fw.write("apple banana cat dog elephant fox grape house igloo jar kite lion moon nose owl panda queen rose sun tiger umbrella violin whale xylophone yellow zebra");
             fw.close();
@@ -15,18 +15,19 @@ public class BealeCipherImplementation {
         }
     }
 
-public static ArrayList<String> loadBook(String fileName) {
-    ArrayList<String> words = new ArrayList<>();
-    try {
-        File file = new File(fileName);
-        Scanner sc = new Scanner(file);
-        while (sc.hasNextLine()) {
-            String word = sc.next().toLowerCase();
-            words.add(word);
+    public static ArrayList<String> loadBook(String fileName) {
+        ArrayList<String> words = new ArrayList<>();
+        try {
+            File file = new File(fileName);
+            Scanner sc = new Scanner(file);
+            while (sc.hasNextLine()) {
+                String word = sc.next().toLowerCase();
+                words.add(word);
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-        sc.close();
-    }catch (FileNotFoundException e) {
-        e.printStackTrace();
+        return words;
     }
-    return words;
 }
