@@ -6,11 +6,8 @@ public class Decryption {
     public static String decrypy(String cipherText, ArrayList<String> bookWords){
         String[] numbers = cipherText.split(" ");
         StringBuilder message = new StringBuilder();
-        String[] var4 = numbers;
-        int var5 = numbers.length;
 
-        for(int var6 = 0; var6 < var5; ++var6){
-            String num = var4[var6];
+        for(String num : numbers){
             int index = Integer.parseInt(num) - 1;
             if(index >= 0 && index < bookWords.size()){
                 message.append(((String)bookWords.get(index)).charAt(0));
