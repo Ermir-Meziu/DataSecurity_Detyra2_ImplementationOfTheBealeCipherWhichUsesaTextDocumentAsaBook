@@ -1,9 +1,20 @@
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        String bookFile = "book.txt";
+        BealeCipherImplementation.generateBookFile(bookFile);
 
+        ArrayList<String> bookWords = BealeCipherImplementation.loadBook(bookFile);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Mesazhi: ");
+        String mesazhi = scanner.nextLine();
+        System.out.println();
+
+        Interaktiv.menyra(mesazhi, bookWords);
     }
 }
 class Interaktiv{
